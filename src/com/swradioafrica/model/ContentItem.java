@@ -40,13 +40,7 @@ public class ContentItem extends Model {
 	}
 
 	private String escapeEntities(String unescaped) {
-		return StringEscapeUtils.escapeHtml(unescaped)
-		.replace("&lsquo;","'")
-		.replace("&rsquo;", "'")
-		.replace("&ldquo;", "\"")
-		.replace("&rdquo;", "\"")
-		.replace("&ndash;","-")
-		.replace("&mdash;","--");
+		return StringEscapeUtils.escapeXml(unescaped);
 	}
 	
 	public String getEscapedTitle() {
