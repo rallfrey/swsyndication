@@ -8,8 +8,6 @@ import com.swradioafrica.servlets.PerformSyndicationsServlet;
 import com.swradioafrica.servlets.ServeNewsSiteMapServlet;
 import com.swradioafrica.servlets.ServeRssServlet;
 import com.swradioafrica.servlets.SyndicateUrlServlet;
-import com.swradioafrica.servlets.TwitterAuthCallbackServlet;
-import com.swradioafrica.servlets.TwitterAuthSetupServlet;
 
 public class SyndicationServletModule extends ServletModule {
 
@@ -21,7 +19,5 @@ public class SyndicationServletModule extends ServletModule {
 		serve("/admin/list").with(ListContentServlet.class);
 		serve("/admin/properties").with(EditPropertiesServlet.class);
 		serve("/admin").with(AdminStaticServlet.class);
-		serve("/oauth_callback").with(TwitterAuthCallbackServlet.class);
-		serve("/oauth_setup").with(TwitterAuthSetupServlet.class);
 	}
 }
