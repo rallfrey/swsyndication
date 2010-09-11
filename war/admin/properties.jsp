@@ -19,8 +19,17 @@
 <p><h2>Twitter Username:</h2><br/>
 <input type="text" name="twitterUsername" value="<%= properties.twitterUsername %>" size="100"/></p>
 
-<p><h2>Twitter Password:</h2><br/>
-<input type="text" name="twitterPassword" value="<%= properties.twitterPassword %>" size="100"/></p>
+<p><h2>Twitter consumerKey:</h2><br/>
+<input type="text" name="consumerKey" value="<%= properties.consumerKey %>" size="100"/></p>
+
+<p><h2>Twitter consumerSecret:</h2><br/>
+<input type="text" name="consumerSecret" value="<%= properties.consumerSecret %>" size="100"/></p>
+
+<p><h2>Twitter AccessToken:</h2><br/>
+<input type="text" name="twitterAccessToken" value="<%= properties.twitterAccessToken %>" size="100"/></p>
+
+<p><h2>Twitter AccessTokenSecret:</h2><br/>
+<input type="text" name="twitterAccessTokenSecret" value="<%= properties.twitterAccessTokenSecret %>" size="100"/></p>
 
 <p><h2>j.mp Username:</h2><br/>
 <input type="text" name="JMPUsername" value="<%= properties.JMPUsername %>" size="100"/></p>

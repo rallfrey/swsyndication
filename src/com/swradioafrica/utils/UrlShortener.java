@@ -3,10 +3,6 @@ package com.swradioafrica.utils;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
-import twitter4j.http.HttpClient;
-import twitter4j.http.Response;
-import twitter4j.org.json.JSONObject;
-
 @Singleton
 public class UrlShortener {
 
@@ -18,11 +14,11 @@ public class UrlShortener {
 		String API_KEY = propertiesRepository.loadProperties().JMPKey;
 			
 		String api_url = String.format(API_STRING, url, USERNAME, API_KEY);
-		HttpClient httpClient = new HttpClient();
-		Response response = httpClient.get(api_url);
-		JSONObject jsonObject = response.asJSONObject();
-		String shortUrl = jsonObject.getJSONObject("results").getJSONObject(url).getString("shortUrl");
+		//HttpClient httpClient = new HttpClient();
+		//Response response = httpClient.get(api_url);
+		//JSONObject jsonObject = response.asJSONObject();
+		//String shortUrl = jsonObject.getJSONObject("results").getJSONObject(url).getString("shortUrl");
 		
-		return shortUrl;
+		return "";
 	}
 }

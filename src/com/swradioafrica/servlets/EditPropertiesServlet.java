@@ -48,6 +48,11 @@ public class EditPropertiesServlet extends HttpServlet{
 		properties.JMPUsername = (String) request.getParameter("JMPUsername");
 		properties.JMPKey = (String) request.getParameter("JMPKey");
 		
+		properties.consumerKey = (String) request.getParameter("consumerKey");
+		properties.consumerSecret = (String) request.getParameter("consumerSecret");
+		properties.twitterAccessToken = (String) request.getParameter("twitterAccessToken");
+		properties.twitterAccessTokenSecret = (String) request.getParameter("twitterAccessTokenSecret");
+		
 		propertiesRepository.saveProperties(properties);
 		
 		request.setAttribute("properties", properties);
