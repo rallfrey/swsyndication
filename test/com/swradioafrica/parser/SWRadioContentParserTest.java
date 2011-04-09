@@ -68,6 +68,4 @@ public class SWRadioContentParserTest {
 		String author = parser.extractAuthor(source, "b", "strong");
 		Assert.assertEquals("match", "Daniel O'Vydra", author);
 	}	
-
-
 }

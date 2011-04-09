@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AntConfiguration">
+    <defaultAnt bundledAnt="true" />
+  </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions>
@@ -27,6 +30,9 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
     <option name="OPTION_SCOPE" value="protected" />
@@ -173,6 +179,9 @@
       <module fileurl="file://$PROJECT_DIR$/swradiosyndication.iml" filepath="$PROJECT_DIR$/swradiosyndication.iml" />
     </modules>
   </component>
+  <component name="ProjectResources">
+    <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
@@ -182,83 +191,32 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
   </component>
-  <component name="masterDetails">
-    <option name="states">
-      <map>
-        <entry key="Copyright.UI">
-          <value>
-            <UIState>
-              <option name="proportions">
-                <SplitterProportionsDataImpl />
-              </option>
-            </UIState>
-          </value>
-        </entry>
-        <entry key="ProjectJDKs.UI">
-          <value>
-            <UIState>
-              <option name="proportions">
-                <SplitterProportionsDataImpl>
-                  <option name="proportions">
-                    <list>
-                      <option value="0.2" />
-                    </list>
-                  </option>
-                </SplitterProportionsDataImpl>
-              </option>
-              <option name="lastEditedConfigurable" value="1.6" />
-            </UIState>
-          </value>
-        </entry>
-        <entry key="ScopeChooserConfigurable.UI">
-          <value>
-            <UIState>
-              <option name="proportions">
-                <SplitterProportionsDataImpl />
-              </option>
-            </UIState>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="myStates">
-      <map>
-        <entry key="Copyright.UI">
-          <value>
-            <UIState>
-              <option name="proportions">
-                <SplitterProportionsDataImpl />
-              </option>
-            </UIState>
-          </value>
-        </entry>
-        <entry key="ProjectJDKs.UI">
-          <value>
-            <UIState>
-              <option name="proportions">
-                <SplitterProportionsDataImpl>
-                  <option name="proportions">
-                    <list>
-                      <option value="0.2" />
-                    </list>
-                  </option>
-                </SplitterProportionsDataImpl>
-              </option>
-              <option name="lastEditedConfigurable" value="1.6" />
-            </UIState>
-          </value>
-        </entry>
-        <entry key="ScopeChooserConfigurable.UI">
-          <value>
-            <UIState>
-              <option name="proportions">
-                <SplitterProportionsDataImpl />
-              </option>
-            </UIState>
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="libraryTable">
+    <library name="Unnamed">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/geronimo-jpa_3.0_spec-1.1.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/twitter4j-core-2.1.5-SNAPSHOT.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/jdo2-api-2.3-eb.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/jericho-html-3.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/commons-io-1.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/junit-4.7.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/commons-lang-2.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/aopalliance.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/mockito-all-1.8.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/siena-0.5.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/guice-2.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/guice-servlet-2.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/appengine-api-1.0-sdk-1.2.6.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/appengine-api-labs-1.2.6.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/commons-codec-1.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/datanucleus-appengine-1.0.3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/datanucleus-core-1.1.5.jar!/" />
+        <root url="jar://$PROJECT_DIR$/war/WEB-INF/lib/datanucleus-jpa-1.1.5.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
 </project>
 

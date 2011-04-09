@@ -72,12 +72,12 @@ public class SWRadioContentParser {
 		return StringUtils.EMPTY;
 	}
 
-	private String extractBodyText(Element body) {
+	protected String extractBodyText(Element body) {
 		List<Element> elements = body.getAllElements("p");
 		StringBuilder sb = new StringBuilder();
 		for (Element element : elements) {
 			String line = element.getContent().getTextExtractor().toString();
-			if (!"".equals(line.trim())) {
+			if (!"".equals(line.trim())) {				
 				sb.append("<p>"+line+"</p>");
 				sb.append("\n");
 			}
@@ -86,7 +86,7 @@ public class SWRadioContentParser {
 		
 	}
 
-	private String extractTitle(Source source) {
+	protected String extractTitle(Source source) {
 		//TODO: support span with class = title1
 		List<Element> headings = source.getAllElements("h1");
 		if (headings != null && headings.size() > 0) {
