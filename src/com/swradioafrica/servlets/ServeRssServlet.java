@@ -17,23 +17,29 @@ import com.swradioafrica.model.ContentItemDAO;
 @SuppressWarnings("serial")
 @Singleton
 public class ServeRssServlet extends HttpServlet {
-	
-	@Inject private ContentItemDAO contentItemDAO;
-		
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
-		response.setContentType("text/xml; charset=UTF8");
-		response.setCharacterEncoding("UTF-8");
-		
-		List<ContentItem> itemsByDate = contentItemDAO.getMostRecentItemsByDate(20);
-		
-		request.setAttribute("contentItems", itemsByDate);
-		
-		String destination = "/rss.jsp";
-        RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
-        rd.forward(request, response);
-	}
+
+  @Inject private ContentItemDAO contentItemDAO;
+
+  @Override
+  protected void doGet(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+
+    response.setContentType("text/xml; charset=UTF8");
+    response.setCharacterEncoding("UTF-8");
+
+    List<ContentItem> itemsByDate = contentItemDAO.getMostRecentItemsByDate(20);
+
+
+    if (itemsByDate.size() == 0) {
+      response.sendError(response.SC_NOT_FOUND, "No items in feed.");
+    } else {
+      request.setAttribute("lastUpdated", itemsByDate.get(0).getPublishedDateRSS822());
+      request.setAttribute("contentItems", itemsByDate);
+      String destination = "/rss.jsp";
+      RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
+      rd.forward(request, response);
+    }
+
+  }
 
 }

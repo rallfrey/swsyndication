@@ -22,7 +22,7 @@ import com.swradioafrica.utils.StringCleaner;
 
 public class SWRadioContentParser {
 	private static final Logger log = Logger.getLogger(SWRadioContentParser.class.getName());
-	
+
 	public ContentItem parseContent(URL url) {
 		ContentItem item = new ContentItem();
 		item.url = url.toString();
@@ -30,9 +30,9 @@ public class SWRadioContentParser {
 		populateContentItem(item, url);
 		return item;
 	}
-	
+
 	protected void populateContentItem(ContentItem item, URL url) {
-		Source source; 
+		Source source;
 		try {
 			source = new Source(url.openStream());
 		} catch (IOException e) {
@@ -45,7 +45,7 @@ public class SWRadioContentParser {
 		item.title = extractTitle(source);
 		item.author = extractAuthor(source, "b", "strong");
 	}
-		
+
 	protected String extractAuthor(Source source, String... tags) {
 		String author = StringUtils.EMPTY;
 		for (String tag : tags) {
@@ -55,16 +55,16 @@ public class SWRadioContentParser {
 		}
 		return author;
 	}
-	
+
 	private String extractAuthor(Source source, String tag) {
 		//TODO: support B as well as strong
 		Pattern authorPattern = Pattern.compile(String.format("<%s>.*By ([\\w\\s']+)\\<br\\>\\s+(\\d.*)</%s>",tag, tag));
-		
+
 		List<Element> tags = source.getAllElements(tag);
 		for (Element element : tags) {
 			String potentialAuthor = element.toString();
 			Matcher authorMatcher = authorPattern.matcher(potentialAuthor);
-			
+
 			if (authorMatcher.find()) {
 				return authorMatcher.group(1);
 			}
@@ -77,13 +77,13 @@ public class SWRadioContentParser {
 		StringBuilder sb = new StringBuilder();
 		for (Element element : elements) {
 			String line = element.getContent().getTextExtractor().toString();
-			if (!"".equals(line.trim())) {				
+			if (!"".equals(line.trim())) {
 				sb.append("<p>"+line+"</p>");
 				sb.append("\n");
 			}
 		}
 		return StringCleaner.cleanAndHtmlEntityEncode(sb.toString());
-		
+
 	}
 
 	protected String extractTitle(Source source) {
@@ -99,7 +99,7 @@ public class SWRadioContentParser {
 	protected Element extractElementContainingBody(Source source) {
 		List<Element> elements = source.getAllElements("p");
 		Map<Integer,Element> map = new HashMap<Integer,Element>();
-		
+
 		for (Element element : elements) {
 			String line = element.getContent().getTextExtractor().toString();
 			map.put(line.length(), element);
@@ -111,12 +111,12 @@ public class SWRadioContentParser {
 
 		Element parentElement = map.get(keyValues.get(0)).getParentElement();
 		String parentElementName = parentElement.getStartTag().getName();
-		
+
 		if (parentElementName.equals("td") || parentElementName.equals("div")) {
 			return parentElement;
 		} else {
 			return parentElement.getParentElement();
 		}
-		
+
 	}
 }
