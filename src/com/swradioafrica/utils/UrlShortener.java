@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import com.google.appengine.repackaged.org.json.JSONObject;
+import org.json.JSONObject;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
