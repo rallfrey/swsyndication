@@ -33,6 +33,9 @@ public class ServeRssServlet extends HttpServlet {
     if (itemsByDate.size() == 0) {
       response.sendError(response.SC_NOT_FOUND, "No items in feed.");
     } else {
+      response.setHeader("Cache-Control", "public, max-age=900");
+      response.setHeader("Pragma", "Public");
+
       request.setAttribute("lastUpdated", itemsByDate.get(0).getPublishedDateRSS822());
       request.setAttribute("contentItems", itemsByDate);
       String destination = "/rss.jsp";
