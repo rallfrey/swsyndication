@@ -11,6 +11,7 @@
 		<atom:link href="http://swradiosyndication.appspot.com/rss" rel="self" type="application/rss+xml" />
 		<description>The independent voice of Zimbabwe</description>
 		<language>en-gb</language>
+		<ttl>15</ttl>
 		<lastBuildDate><%= contentItems.get(0).getPublishedDateRSS822() %></lastBuildDate>
 
 		<% for(ContentItem item : contentItems) { %>

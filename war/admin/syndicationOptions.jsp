@@ -23,8 +23,6 @@
 <p><h2>Url:</h2><br/>
 <input type="text" name="url" value="<%= content.url %>" size="100"/></p>
 
-<h2>Send to:</h2><br/>
-Twitter: <input type="checkbox" name="syndications" value="twitter" checked="true" /><br/>
 <input type="submit" value="syndicate" />
 </form>
 
