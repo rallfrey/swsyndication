@@ -42,6 +42,9 @@ public class SWRadioContentParser {
 		source.fullSequentialParse();
 
 		item.body = extractBodyText(extractElementContainingBody(source));
+		if (item.body.equals(StringUtils.EMPTY)) {
+			log.severe("Could not extract body text for url: " + url.toString());
+		}
 		item.title = extractTitle(source);
 		item.author = extractAuthor(source, "b", "strong");
 	}
@@ -73,6 +76,9 @@ public class SWRadioContentParser {
 	}
 
 	protected String extractBodyText(Element body) {
+		if(body == null) {
+			return StringUtils.EMPTY;
+		}
 		List<Element> elements = body.getAllElements("p");
 		StringBuilder sb = new StringBuilder();
 		for (Element element : elements) {
@@ -108,15 +114,18 @@ public class SWRadioContentParser {
 		List<Integer> keyValues = new ArrayList<Integer>(map.keySet());
 		Collections.sort(keyValues);
 		Collections.reverse(keyValues);
-
-		Element parentElement = map.get(keyValues.get(0)).getParentElement();
-		String parentElementName = parentElement.getStartTag().getName();
-
-		if (parentElementName.equals("td") || parentElementName.equals("div")) {
-			return parentElement;
+		
+		if(keyValues.size() == 0) {
+			return null;
 		} else {
-			return parentElement.getParentElement();
+			Element parentElement = map.get(keyValues.get(0)).getParentElement();
+			String parentElementName = parentElement.getStartTag().getName();
+	
+			if (parentElementName.equals("td") || parentElementName.equals("div")) {
+				return parentElement;
+			} else {
+				return parentElement.getParentElement();
+			}
 		}
-
 	}
 }
